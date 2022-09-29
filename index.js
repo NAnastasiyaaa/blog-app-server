@@ -13,7 +13,10 @@ const multer = require("multer");
 const path = require("path");
 
 dotenv.config();
-app.use(cors());
+app.use(cors({
+  'methods': '*',
+  'origin': '*'
+}));
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
