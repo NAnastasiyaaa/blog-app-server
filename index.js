@@ -18,8 +18,8 @@ app.use(cors({
   'origin': '*'
 }));
 app.use(express.json());
-// app.use("/images", express.static(path.join(__dirname, "/images")));
-app.use(express.static("/images"))
+app.use("/images", express.static(__dirname, "/images"));
+// app.use(express.static("/images"))
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
